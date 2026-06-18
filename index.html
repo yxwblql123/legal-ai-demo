@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuScan - Contract Review Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <rect width="28" height="28" rx="6" fill="#1e3a5f"/>
+                    <path d="M8 8h12M8 13h10M8 18h7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M17 16l4 4-4 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="logo-text">DocuScan</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#demo">Demo</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <button class="btn btn-primary btn-sm" onclick="scrollToSection('demo')">Try Free</button>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Trusted by 500+ law firms
+                </div>
+                <h1 class="hero-title">
+                    Review Contracts<br>Faster and Smarter
+                </h1>
+                <p class="hero-description">
+                    Upload any contract — NDAs, MSAs, employment agreements, vendor contracts.
+                    Our platform analyzes risks, suggests improvements, and generates reports in minutes.
+                    Save hours of manual review time every week.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-lg" onclick="scrollToSection('demo')">
+                        Try the Demo
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                    <button class="btn btn-outline btn-lg" onclick="scrollToSection('pricing')">
+                        See Pricing
+                    </button>
+                </div>
+                <div class="hero-trust">
+                    <span style="font-size:0.85rem;color:var(--text-muted);">Trusted by teams at:</span>
+                    <div class="trust-logos">
+                        <span>LawPay</span><span>Clio</span><span>MyCase</span><span>PracticePanther</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="contract-preview">
+                    <div class="preview-header">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+                        <div class="file-info">
+                            <div class="file-name">NDA_Review_2026.pdf</div>
+                            <div class="file-meta">Uploaded 2 min ago &middot; 12 pages</div>
+                        </div>
+                        <div class="file-status analyzing">Analyzing...</div>
+                    </div>
+                    <div class="preview-progress">
+                        <div class="progress-label">
+                            <span>Analysis Progress</span>
+                            <span class="progress-pct">87%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width:87%"></div>
+                        </div>
+                    </div>
+                    <div class="preview-results">
+                        <div class="result-item risk-high">
+                            <span class="risk-dot high"></span>
+                            <span>High Risk: Indemnification clause overly broad</span>
+                            <span class="result-action">View</span>
+                        </div>
+                        <div class="result-item risk-medium">
+                            <span class="risk-dot medium"></span>
+                            <span>Medium: Payment terms unclear in Section 4.2</span>
+                            <span class="result-action">View</span>
+                        </div>
+                        <div class="result-item risk-low">
+                            <span class="risk-dot low"></span>
+                            <span>Low Risk: Termination clause is standard</span>
+                            <span class="result-action">View</span>
+                        </div>
+                    </div>
+                    <div class="preview-footer">
+                        <button class="btn btn-primary btn-sm">Download Report</button>
+                        <button class="btn btn-outline btn-sm">Suggest Edits</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <div class="stat-number" data-count="500">500+</div>
+                <div class="stat-label">Law Firms Trust Us</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="50">50K+</div>
+                <div class="stat-label">Contracts Analyzed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="92">92%</div>
+                <div class="stat-label">Accuracy Rate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="15">15 min</div>
+                <div class="stat-label">Avg. Review Time</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Everything You Need for Contract Review</h2>
+                <p class="section-description">
+                    Built on analysis of 500,000+ legal documents to help your team work faster.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    </div>
+                    <h3>Risk Detection</h3>
+                    <p>Automatically flags high-risk clauses including indemnification, liability caps, auto-renewal, and non-compete terms.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                    </div>
+                    <h3>Smart Reports</h3>
+                    <p>Generate executive summaries, detailed risk matrices, and redline edit suggestions in PDF or Word format.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                    </div>
+                    <h3>Multi-Jurisdiction</h3>
+                    <p>Supports contracts across 50+ jurisdictions including US, UK, EU, Canada, Australia, and Singapore.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                    </div>
+                    <h3>Bank-Level Security</h3>
+                    <p>SOC 2 Type II certified. End-to-end encryption. Your contracts never leave a secure environment.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+                    </div>
+                    <h3>Compare Versions</h3>
+                    <p>Upload redlines from counterparty. Compare versions side by side and identify key differences instantly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="2"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+                    </div>
+                    <h3>Clause Library</h3>
+                    <p>Build your own library of preferred clauses. The system suggests your standard language during each review.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Review Any Contract in 3 Steps</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                    </div>
+                    <h3>Upload Contract</h3>
+                    <p>Drag and drop any PDF, Word, or text file. Supports NDAs, MSAs, SOWs, employment agreements, vendor contracts, and more.</p>
+                </div>
+                <div class="step-arrow">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg>
+                    </div>
+                    <h3>Analyze Document</h3>
+                    <p>The platform reviews the entire document in seconds — identifying risks, suggesting improvements, and checking against your clause library.</p>
+                </div>
+                <div class="step-arrow">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                    </div>
+                    <h3>Get Report</h3>
+                    <p>Download a professional report with risk ratings, edit suggestions, and negotiation points. Share securely with your team or clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Demo Section -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Interactive Demo</h2>
+                <p class="section-description">
+                    Select a sample contract below to see how the platform analyzes legal documents.
+                </p>
+            </div>
+            <div class="demo-container">
+                <div class="demo-sidebar">
+                    <div class="demo-sidebar-header">
+                        <h3>Sample Contracts</h3>
+                    </div>
+                    <div class="sample-list">
+                        <div class="sample-item active" onclick="loadSample('nda')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+                            <div class="sample-info">
+                                <div class="sample-name">Mutual NDA</div>
+                                <div class="sample-meta">5 pages / Medium Risk</div>
+                            </div>
+                        </div>
+                        <div class="sample-item" onclick="loadSample('msa')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+                            <div class="sample-info">
+                                <div class="sample-name">Master Service Agreement</div>
+                                <div class="sample-meta">12 pages / High Risk</div>
+                            </div>
+                        </div>
+                        <div class="sample-item" onclick="loadSample('employment')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+                            <div class="sample-info">
+                                <div class="sample-name">Employment Agreement</div>
+                                <div class="sample-meta">8 pages / Low Risk</div>
+                            </div>
+                        </div>
+                        <div class="sample-item upload-item" onclick="triggerUpload()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                            <div class="sample-info">
+                                <div class="sample-name">Upload Your Own</div>
+                                <div class="sample-meta">PDF, DOCX, TXT supported</div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="file" id="fileUpload" style="display:none;" accept=".pdf,.docx,.txt" onchange="handleFileUpload(event)">
+                </div>
+                <div class="demo-main">
+                    <div class="demo-toolbar">
+                        <div class="toolbar-left">
+                            <span class="toolbar-filename" id="demoFilename">Mutual_NDA_Sample.pdf</span>
+                            <span class="toolbar-status complete" id="demoStatus">Analysis Complete</span>
+                        </div>
+                        <div class="toolbar-right">
+                            <button class="toolbar-btn" onclick="downloadReport()">Report</button>
+                            <button class="toolbar-btn" onclick="showEdits()">Edits</button>
+                        </div>
+                    </div>
+                    <div class="demo-content">
+                        <div class="contract-text" id="contractText">
+                            <h3>MUTUAL NON-DISCLOSURE AGREEMENT</h3>
+                            <p><strong>THIS AGREEMENT</strong> is entered into as of January 1, 2026, by and between <strong>ABC Corporation</strong> ("Disclosing Party") and <strong>XYZ Inc.</strong> ("Receiving Party").</p>
+                            
+                            <h4>1. CONFIDENTIAL INFORMATION</h4>
+                            <p class="clause-text">"Confidential Information" means any information disclosed by either party that is marked "Confidential" or would reasonably be understood to be confidential given the nature of the information and circumstances of disclosure.</p>
+                            
+                            <h4>2. OBLIGATIONS <span class="risk-badge high">HIGH RISK</span></h4>
+                            <p class="clause-text risk-high-text">The Receiving Party shall hold all Confidential Information in strict confidence and shall not disclose such information to any third party <span class="highlight">without the prior written consent of the Disclosing Party</span>. The Receiving Party shall use the Confidential Information only for the purpose of evaluating a potential business relationship.</p>
+                            
+                            <h4>3. TERM <span class="risk-badge medium">MEDIUM RISK</span></h4>
+                            <p class="clause-text risk-medium-text">This Agreement shall remain in effect for a period of <span class="highlight">three (3) years</span> from the date of execution, unless earlier terminated by either party with 30 days written notice.</p>
+                            
+                            <h4>4. INDEMNIFICATION <span class="risk-badge high">HIGH RISK</span></h4>
+                            <p class="clause-text risk-high-text">Each party agrees to indemnify, defend, and hold harmless the other party from and against any claims, damages, losses, and expenses arising out of or related to any breach of this Agreement <span class="highlight">including reasonable attorney's fees, regardless of fault or negligence</span>.</p>
+                        </div>
+                        <div class="analysis-panel" id="analysisPanel">
+                            <div class="panel-header">Analysis Results</div>
+                            <div class="risk-summary">
+                                <div class="risk-count high">2 High</div>
+                                <div class="risk-count medium">1 Medium</div>
+                                <div class="risk-count low">0 Low</div>
+                            </div>
+                            <div class="issue-list">
+                                <div class="issue-item high">
+                                    <div class="issue-header">
+                                        <span class="issue-severity high">HIGH</span>
+                                        <span class="issue-title">Indemnification Overly Broad</span>
+                                    </div>
+                                    <div class="issue-detail">Section 4 makes indemnification unilateral and includes attorney's fees regardless of fault. Consider mutual indemnification with fault-based standard.</div>
+                                    <div class="issue-suggestion"><strong>Suggested fix:</strong> "Each party shall indemnify the other for third-party claims arising from its gross negligence or willful misconduct."</div>
+                                </div>
+                                <div class="issue-item high">
+                                    <div class="issue-header">
+                                        <span class="issue-severity high">HIGH</span>
+                                        <span class="issue-title">Consent Requirement Too Broad</span>
+                                    </div>
+                                    <div class="issue-detail">Section 2 requires "prior written consent" for any disclosure, which may impede normal business operations.</div>
+                                    <div class="issue-suggestion"><strong>Suggested fix:</strong> Add exceptions for: (a) required by law, (b) previously known, (c) independently developed.</div>
+                                </div>
+                                <div class="issue-item medium">
+                                    <div class="issue-header">
+                                        <span class="issue-severity medium">MEDIUM</span>
+                                        <span class="issue-title">Term Period Standard</span>
+                                    </div>
+                                    <div class="issue-detail">3-year term is standard but consider whether perpetual confidentiality obligations should apply to trade secrets.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Transparent Pricing</h2>
+                <p class="section-description">Start free, upgrade as you grow. No hidden fees.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-name">Solo</div>
+                        <div class="pricing-desc">For independent attorneys</div>
+                        <div class="pricing-price">
+                            <span class="price-currency">$</span>
+                            <span class="price-amount">49</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>20 contracts/month</li>
+                        <li>Standard risk analysis</li>
+                        <li>PDF and Word reports</li>
+                        <li>5+ document types</li>
+                        <li>Email support</li>
+                    </ul>
+                    <button class="btn btn-outline btn-block">Start Free Trial</button>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <div class="pricing-name">Professional</div>
+                        <div class="pricing-desc">For law firms and teams</div>
+                        <div class="pricing-price">
+                            <span class="price-currency">$</span>
+                            <span class="price-amount">149</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>100 contracts/month</li>
+                        <li>Advanced analysis</li>
+                        <li>Clause library and redlining</li>
+                        <li>Multi-user (up to 5)</li>
+                        <li>Priority support</li>
+                        <li>API access</li>
+                    </ul>
+                    <button class="btn btn-primary btn-block">Start Free Trial</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-name">Enterprise</div>
+                        <div class="pricing-desc">For large organizations</div>
+                        <div class="pricing-price">
+                            <span class="price-currency">$</span>
+                            <span class="price-amount">399</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Unlimited contracts</li>
+                        <li>Custom training</li>
+                        <li>Unlimited users</li>
+                        <li>SSO and SAML</li>
+                        <li>Dedicated account manager</li>
+                        <li>On-premise option</li>
+                    </ul>
+                    <button class="btn btn-outline btn-block">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span>How accurate is the contract analysis?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">Our platform achieves a 92% accuracy rate based on testing across 500,000+ real legal documents. All suggestions include confidence scores, and we recommend attorney review for high-risk clauses. The system is designed to assist, not replace, legal judgment.</div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span>Is my contract data secure?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">Absolutely. We are SOC 2 Type II certified and GDPR compliant. All documents are encrypted at rest and in transit. We never share your contracts with third parties without explicit consent. You can also run on-premise for maximum security.</div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span>What document formats are supported?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">We support PDF, Word (DOCX), plain text, and scanned documents (with OCR). Documents can be in English, Spanish, French, German, and Chinese. Batch upload is available on Professional and Enterprise plans.</div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span>Can I customize it for my firm's needs?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">Yes! Enterprise plans include custom training where you can upload your firm's past contracts, clause library, and playbook. The system learns your preferred language and automatically suggests your standard clauses during review.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Contract Review Process?</h2>
+                <p>Join 500+ law firms who save 20+ hours per week with DocuScan.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-lg" onclick="scrollToSection('demo')">Start Free Trial</button>
+                    <button class="btn cta-btn-outline btn-lg" onclick="scrollToSection('contact')">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                            <rect width="28" height="28" rx="6" fill="#475569"/>
+                            <path d="M8 8h12M8 13h10M8 18h7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        DocuScan
+                    </div>
+                    <p class="footer-desc">Contract review software for modern legal teams. Save time, reduce risk, close deals faster.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <a href="#">Contract Review</a>
+                    <a href="#">Risk Analysis</a>
+                    <a href="#">Clause Library</a>
+                    <a href="#">API Access</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Security</a>
+                    <a href="#">SOC 2 Report</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DocuScan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
